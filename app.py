@@ -1,42 +1,66 @@
+import os
 import random
 import nltk
 import uuid
 from flask import Flask, request, jsonify
+from flask_pymongo import PyMongo
+
+MONGO_URL = os.environ.get('MONGO_URL')
+if not MONGO_URL:
+    MONGO_URL = "mongodb://localhost:27017/apiai";
+
 app = Flask(__name__)
-
-
-sessions = {}
+app.debug = True
+app.config['MONGO_URI'] = MONGO_URL
+mongo = PyMongo(app)
 
 def read_stories():
     with open('data/stories.csv') as f:
         stories_raw = f.readlines()
     return stories_raw
 
-stories_raw = read_stories()
-
 @app.route('/')
 def index():
+    #new_story('123')
+    #print(mongo.db.sessions.find_one({'session_id':'123'}))
+    return 'Yo, it is working!'
+
+@app.route('/next')
+def nextl():
+    #next_line('123')
+    #print(mongo.db.sessions.find_one({'session_id':'123'}))
     return 'Yo, it is working!'
 
 def new_story(session_id):
-    global sessions
-    global stories_raw
-    story = random.choice(stories_raw)
+    stories_raw = read_stories()
+    session = mongo.db.sessions.find_one({'session_id':session_id})
+    if session:
+        stories_indexes = session['stories_indexes']
+    else:
+        stories_indexes = []
+    allowed_indexes = [x for x in range(len(stories_raw)) if x not in stories_indexes]
+    if not allowed_indexes:
+        return None
+    random_index = random.choice(allowed_indexes)
+    stories_indexes.append(random_index)
+    story = stories_raw[random_index]
     lines = nltk.sent_tokenize(story)
-    #session_id = str(uuid.uuid4()) 
-    sessions[session_id] = {'session_id': session_id,
-                            'story_id': "TBD",
-                            'next_line': 0,
-                            'lines':lines,
-                            'reactions':[]}
-    return session_id
+    mongo.db.sessions.update({'session_id': session_id},
+                             {'session_id': session_id,
+                              'stories_indexes': stories_indexes,
+                              'next_line': 0,
+                              'story': {'id': random_index,
+                                        'lines': lines}},
+                             upsert=True)
 
 def next_line(session_id):
-    global sessions
-    n = sessions[session_id]['next_line']
-    if n < len(sessions[session_id]['lines']):
-        line = sessions[session_id]['lines'][n]
-        sessions[session_id]['next_line'] += 1
+    session = mongo.db.sessions.find_one({'session_id': session_id})
+    n = session['next_line']
+    if n < len(session['story']['lines']):
+        line = session['story']['lines'][n]
+        mongo.db.sessions.update({'session_id': session_id},
+                                 {'$inc': {'next_line': 1}},
+                                 upsert=True)
         return line
     else:
         return 'END_OF_STORY'
@@ -68,6 +92,5 @@ def apiai():
             return jsonify(reply)
     
 if __name__ == "__main__":
-    stories_raw = read_stories()
     print("all is set")
     app.run()

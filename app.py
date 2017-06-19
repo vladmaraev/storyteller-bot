@@ -4,7 +4,7 @@ import uuid
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
-stories_raw = ""
+
 sessions = {}
 
 def read_stories():
@@ -12,12 +12,15 @@ def read_stories():
         stories_raw = f.readlines()
     return stories_raw
 
+stories_raw = read_stories()
+
 @app.route('/')
 def index():
     return 'Yo, it is working!'
 
 def new_story(session_id):
-    global sessions, stories_raw
+    global sessions
+    global stories_raw
     story = random.choice(stories_raw)
     lines = nltk.sent_tokenize(story)
     #session_id = str(uuid.uuid4()) 

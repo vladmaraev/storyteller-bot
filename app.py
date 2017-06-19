@@ -4,21 +4,20 @@ import uuid
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
+stories_raw = ""
+sessions = {}
+
 def read_stories():
     with open('data/stories.csv') as f:
         stories_raw = f.readlines()
     return stories_raw
-
-stories_raw = read_stories()
-sessions = {}
 
 @app.route('/')
 def index():
     return 'Yo, it is working!'
 
 def new_story(session_id):
-    global sessions
-    global stories_raw
+    global sessions, stories_raw
     story = random.choice(stories_raw)
     lines = nltk.sent_tokenize(story)
     #session_id = str(uuid.uuid4()) 
@@ -66,5 +65,6 @@ def apiai():
             return jsonify(reply)
     
 if __name__ == "__main__":
+    stories_raw = read_stories()
     print("all is set")
     app.run()

@@ -40,7 +40,8 @@ def new_story(session_id):
         stories_indexes = []
     allowed_indexes = [x for x in range(len(stories_raw)) if x not in stories_indexes]
     if not allowed_indexes:
-        return None
+        stories_indexes = []
+        allowed_indexes = range(len(stories_raw))
     random_index = random.choice(allowed_indexes)
     stories_indexes.append(random_index)
     story = stories_raw[random_index]

@@ -93,5 +93,4 @@ def apiai():
             return jsonify(reply)
     
 if __name__ == "__main__":
-    print("all is set")
     app.run()

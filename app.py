@@ -9,6 +9,9 @@ def read_stories():
         stories_raw = f.readlines()
     return stories_raw
 
+stories_raw = read_stories()
+sessions = {}
+
 @app.route('/')
 def index():
     return 'Yo, it is working!'
@@ -60,7 +63,5 @@ def apiai():
             return jsonify(reply)
     
 if __name__ == "__main__":
-    stories_raw = read_stories()
-    sessions = {}
     print("all is set")
     app.run()

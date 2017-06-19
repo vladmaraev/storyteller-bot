@@ -17,6 +17,8 @@ def index():
     return 'Yo, it is working!'
 
 def new_story(session_id):
+    global sessions
+    global stories_raw
     story = random.choice(stories_raw)
     lines = nltk.sent_tokenize(story)
     #session_id = str(uuid.uuid4()) 
@@ -28,6 +30,7 @@ def new_story(session_id):
     return session_id
 
 def next_line(session_id):
+    global sessions
     n = sessions[session_id]['next_line']
     if n < len(sessions[session_id]['lines']):
         line = sessions[session_id]['lines'][n]

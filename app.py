@@ -73,8 +73,9 @@ def facebook_reply(text):
                 "facebook": {
                     "text": text,
                     "quick_replies": [{"content_type": "text", "title": "•••", "payload": "GROUND"},
-                                      {"content_type": "text", "title": "🙂", "payload": "SMILE"}]}}}
-    
+                                      {"content_type": "text", "title": "🙂", "payload": "SMILE"},
+                                      {"content_type": "text", "title": "😂", "payload": "FACE_WITH_TEARS_OF_JOY"}]}}}
+
 @app.route('/apiai', methods=['POST'])
 def apiai():
     print(request.json)
@@ -91,6 +92,6 @@ def apiai():
             reply = facebook_reply("That's it. How do you like a story?")
             reply["followupEvent"] = {"name": "newStoryEvent"}
             return jsonify(reply)
-    
+
 if __name__ == "__main__":
     app.run()

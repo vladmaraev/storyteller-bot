@@ -1,8 +1,8 @@
 * list of TODOs
 - [ ] add more stories 
 - [ ] Facebook approval 
-- [ ] add more reactions
-- [ ] allow reacting with custom stuff 
-- [ ] fix welcome message that isn't working 
-- [ ] handle messages like "another story", "shut up" etc
-- [ ] rename bot to "Gretel the minstrel"
+- [ ] add more reactions 
+- [ ] (Vlad) allow reacting with custom stuff 
+- [ ] (Vlad) fix welcome message that isn't working 
+- [ ] (Vlad) handle messages like "another story", "shut up" etc
+- [ ] (Chiara) rename bot to "Gretel the minstrel"

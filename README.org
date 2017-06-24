@@ -1,7 +1,7 @@
 * list of TODOs
-- [ ] add more stories 
-- [ ] Facebook approval 
-- [ ] add more reactions 
+- [ ] (everyone) add more stories 
+- [ ] (Ye) Facebook approval 
+- [ ] (Ye) add more reactions 
 - [ ] (Vlad) allow reacting with custom stuff 
 - [ ] (Vlad) fix welcome message that isn't working 
 - [ ] (Vlad) handle messages like "another story", "shut up" etc

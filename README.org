@@ -5,4 +5,4 @@
 - [ ] (Vlad) allow reacting with custom stuff 
 - [ ] (Vlad) fix welcome message that isn't working 
 - [ ] (Vlad) handle messages like "another story", "shut up" etc
-- [X] (Chiara) rename bot to "Gretel the minstrel" [waiting approval fb]
+- [X] (Chiara) rename bot to "Gretel the minstrel" [approved!]

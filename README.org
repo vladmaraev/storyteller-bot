@@ -1,4 +1,4 @@
-* TODO 
+* list of TODOs
 - [ ] add more stories 
 - [ ] Facebook approval 
 - [ ] add more reactions

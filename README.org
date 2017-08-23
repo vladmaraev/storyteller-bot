@@ -7,3 +7,4 @@
 - [ ] (Vlad) fix welcome messagworkinge that isn't  
 - [ ] (Vlad) handle messages like "another story", "shut up" etc
 - [X] (Chiara) rename bot to "Gretel the minstrel" [approved!]
+- [ ] Proposal https://ara.amazon-ml.com/proposals/#apply

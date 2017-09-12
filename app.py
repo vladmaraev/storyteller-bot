@@ -74,7 +74,12 @@ def facebook_reply(text):
                     "text": text,
                     "quick_replies": [{"content_type": "text", "title": "•••", "payload": "GROUND"},
                                       {"content_type": "text", "title": "🙂", "payload": "SMILE"},
-                                      {"content_type": "text", "title": "😂", "payload": "LAUGH"}]}}}
+                                      {"content_type": "text", "title": "😂", "payload": "LAUGH"},
+                                      {"content_type": "text", "title": "😮", "payload": "SURPRISE"},
+                                      {"content_type": "text", "title": "😡", "payload": "ANGER"},
+                                      {"content_type": "text", "title": "😱", "payload": "FEAR"}
+
+                    ]}}}
 
 @app.route('/apiai', methods=['POST'])
 def apiai():

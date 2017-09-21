@@ -73,14 +73,15 @@ def facebook_reply(text):
                 "facebook": {
                     "text": text,
                     "quick_replies": [{"content_type": "text", "title": "•••", "payload": "GROUND"},
-                                      {"content_type": "text", "title": "🙂", "payload": "SMILE"},
-                                      {"content_type": "text", "title": "😂", "payload": "LAUGH"},
-                                      {"content_type": "text", "title": "😮", "payload": "SURPRISE"},
-                                      {"content_type": "text", "title": "😡", "payload": "ANGER"},
-                                      {"content_type": "text", "title": "😱", "payload": "FEAR"},
                                       {"content_type": "text", "title": "", "payload": "CONFUSION",
-                                       "image_url":"https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/96/thinking-face_1f914.png"}
-
+                                       "image_url":"https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/96/thinking-face_1f914.png"},
+                                      {"content_type": "text", "title": "👍", "payload": "THUMBUP"},
+                                      {"content_type": "text", "title": "😂", "payload": "LAUGH"},
+                                      {"content_type": "text", "title": "😀", "payload": "SMILE"},
+                                      {"content_type": "text", "title": "😮", "payload": "SURPRISE"},
+                                      {"content_type": "text", "title": "😡", "payload": "SAD"},
+                                      {"content_type": "text", "title": "😡", "payload": "ANGER"},
+                                      {"content_type": "text", "title": "😨", "payload": "FEAR"},
                     ]}}}
 
 @app.route('/apiai', methods=['POST'])

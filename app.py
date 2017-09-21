@@ -73,7 +73,7 @@ def facebook_reply(text):
                 "facebook": {
                     "text": text,
                     "quick_replies": [{"content_type": "text", "title": "•••", "payload": "GROUND"},
-                                      {"content_type": "text", "title": "", "payload": "CONFUSION",
+                                      {"content_type": "text", "title": "?", "payload": "CONFUSION",
                                        "image_url":"https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/96/thinking-face_1f914.png"},
                                       {"content_type": "text", "title": "👍", "payload": "THUMBUP"},
                                       {"content_type": "text", "title": "😂", "payload": "LAUGH"},

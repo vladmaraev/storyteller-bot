@@ -79,7 +79,7 @@ def facebook_reply(text):
                                       {"content_type": "text", "title": "😂", "payload": "LAUGH"},
                                       {"content_type": "text", "title": "😀", "payload": "SMILE"},
                                       {"content_type": "text", "title": "😮", "payload": "SURPRISE"},
-                                      {"content_type": "text", "title": "😡", "payload": "SAD"},
+                                      {"content_type": "text", "title": "😢", "payload": "SAD"},
                                       {"content_type": "text", "title": "😡", "payload": "ANGER"},
                                       {"content_type": "text", "title": "😨", "payload": "FEAR"},
                     ]}}}

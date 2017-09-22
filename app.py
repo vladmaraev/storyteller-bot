@@ -76,7 +76,7 @@ def facebook_reply(text):
                                       {"content_type": "text", "title": "?", "payload": "CONFUSION",
                                        "image_url":"https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/96/thinking-face_1f914.png"},
                                       {"content_type": "text", "title": "👍", "payload": "THUMBUP"},
-                                      {"content_type": "text", "title": "😂", "payload": "LAUGH"},
+                                      {"content_type": "text", "title": "😆", "payload": "LAUGH"},
                                       {"content_type": "text", "title": "😊", "payload": "SMILE"},
                                       {"content_type": "text", "title": "😮", "payload": "SURPRISE"},
                                       {"content_type": "text", "title": "😢", "payload": "SAD"},

@@ -1,10 +1,10 @@
 * list of TODOs
 - [ ] (everyone) add more stories 
-- [ ] (Ye) Facebook approval 
-- [ ] (Ye) add more reactions 
-- [ ] (Vlad) allow reacting with custom stuff
-- [ ] (Vlad) prevent from sleeping
+- [X] (Ye) Facebook approval 
+- [X] (Ye) add more reactions 
+- [X] (Vlad) allow reacting with custom stuff
+- [X] (Vlad) prevent from sleeping
 - [X] (Vlad) fix welcome messagworkinge that isn't  
 - [ ] (Vlad) handle messages like "another story", "shut up" etc
 - [X] (Chiara) rename bot to "Gretel the minstrel" [approved!]
-- [ ] Proposal https://ara.amazon-ml.com/proposals/#apply
+- [X] Proposal https://ara.amazon-ml.com/proposals/#apply

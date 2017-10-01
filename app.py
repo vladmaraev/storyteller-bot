@@ -89,7 +89,8 @@ def facebook_reply(text):
 
 def telegram_reply(text):
     return {"text": text,
-            "reply_markup": {"resize_keyboard":"true",
+            "reply_markup": {"resize_keyboard": "true",
+                             "one_time_keyboard": "true",
                              "keyboard": [[{"text": "•••"},
                                            {"text": "🤔"},
                                            {"text": "👍"},

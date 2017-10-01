@@ -97,7 +97,7 @@ def telegram_reply(text):
                                                  [{"text": "😮", "callback_data": "SURPRISE"}],
                                                  [{"text": "😢", "callback_data": "SAD"}],
                                                  [{"text": "😡", "callback_data": "ANGER"}],
-                                                 [{"text": "😨", "callback_data": "FEAR"}]]}
+                                                 [{"text": "😨", "callback_data": "FEAR"}]]}}
     
 @app.route('/apiai', methods=['POST'])
 def apiai():

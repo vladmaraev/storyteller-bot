@@ -89,15 +89,15 @@ def facebook_reply(text):
 
 def telegram_reply(text):
     return {"text": text,
-            "reply_markup": {"inline_keyboard": [[{"text": "•••", "callback_data": "GROUND"}],
-                                                 [{"text": "🤔", "callback_data": "CONFUSION"}],
-                                                 [{"text": "👍", "callback_data": "THUMBUP"}],
-                                                 [{"text": "😆", "callback_data": "LAUGH"}],
-                                                 [{"text": "😊", "callback_data": "SMILE"}],
-                                                 [{"text": "😮", "callback_data": "SURPRISE"}],
-                                                 [{"text": "😢", "callback_data": "SAD"}],
-                                                 [{"text": "😡", "callback_data": "ANGER"}],
-                                                 [{"text": "😨", "callback_data": "FEAR"}]]}}
+            "reply_markup": {"inline_keyboard": [{"text": "•••", "callback_data": "GROUND"},
+                                          {"text": "🤔", "callback_data": "CONFUSION"},
+                                          {"text": "👍", "callback_data": "THUMBUP"},
+                                          {"text": "😆", "callback_data": "LAUGH"},
+                                          {"text": "😊", "callback_data": "SMILE"},
+                                          {"text": "😮", "callback_data": "SURPRISE"},
+                                          {"text": "😢", "callback_data": "SAD"},
+                                          {"text": "😡", "callback_data": "ANGER"},
+                                          {"text": "😨", "callback_data": "FEAR"}]}}
     
 @app.route('/apiai', methods=['POST'])
 def apiai():

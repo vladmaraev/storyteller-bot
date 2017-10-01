@@ -89,15 +89,16 @@ def facebook_reply(text):
 
 def telegram_reply(text):
     return {"text": text,
-            "reply_markup": {"keyboard": [[{"text": "•••"},
-                                                  {"text": "🤔"},
-                                                  {"text": "👍"},
-                                                  {"text": "😆"},
-                                                  {"text": "😊"},
-                                                  {"text": "😮"},
-                                                  {"text": "😢"},
-                                                  {"text": "😡"},
-                                                  {"text": "😨"}]]}}
+            "reply_markup": {"resize_keyboard":"true",
+                             "keyboard": [[{"text": "•••"},
+                                           {"text": "🤔"},
+                                           {"text": "👍"},
+                                           {"text": "😆"},
+                                           {"text": "😊"},
+                                           {"text": "😮"},
+                                           {"text": "😢"},
+                                           {"text": "😡"},
+                                           {"text": "😨"}]]}}
     
 @app.route('/apiai', methods=['POST'])
 def apiai():

@@ -67,7 +67,7 @@ def next_line(session_id):
         return 'END_OF_STORY' 
 
 
-def reply(text):
+def send_reply(text):
     return {"speech": text,
             "displayText": text,
             "data": { "facebook" : facebook_reply(text),
@@ -106,13 +106,13 @@ def apiai():
     if request.json['result']['action'] == 'newStory':
         new_story(session_id)
         line = next_line(session_id)
-        return jsonify(reply(line))
+        return jsonify(send_reply(line))
     elif request.json['result']['action'] == 'nextLine':
         line = next_line(session_id)
         if line != 'END_OF_STORY':
-            return jsonify(reply(line))
+            return jsonify(send_reply(line))
         else:
-            reply = reply("That's it. How do you like a story?")
+            reply = send_reply("That's it. How do you like a story?")
             reply["followupEvent"] = {"name": "newStoryEvent"}
             return jsonify(reply)
 
